@@ -27,7 +27,7 @@ def item_list_view(request):
 
 @staff_member_required
 def item_create_view(request):
-    form = ItemModelForm(request.POST or None)
+    form = ItemModelForm(request.POST or None, request.FILES or None)
     if form.is_valid():
         # form.save()
         obj = form.save(commit=False)
@@ -54,7 +54,7 @@ def item_detail_view(request, item_id):
 @staff_member_required
 def item_update_view(request, item_id):
     obj = get_object_or_404(Item, id=item_id)
-    form = ItemModelForm(request.POST or None, instance=obj)
+    form = ItemModelForm(request.POST or None, request.FILES or None, instance=obj)
     if form.is_valid():
         form.save()
         return redirect(f"{obj.get_absolute_url()}")

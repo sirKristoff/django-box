@@ -11,7 +11,7 @@ class ItemForm(forms.Form):
 class ItemModelForm(forms.ModelForm):
     class Meta:
         model = Item
-        fields = ['name', 'description']
+        fields = ['name', 'image', 'description']
 
     def clean_name(self, *args, **kwargs):
         instance = self.instance

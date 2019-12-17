@@ -13,7 +13,9 @@
 
 {% else %}
 
-    <img src="{{ item.image }}" class="card-img-top" alt="item image">
+    {% if item.image %}
+    <img src="{{ item.image.url }}" class="card-img-top" alt="item image">
+    {% endif %}
     <div class='card-body'>
         <h1 class='card-title'>{{ item.name }}</h1>
         <p class='card-text'>

@@ -9,7 +9,7 @@ class Item(models.Model):
     # id = models.IntegerField() # pk
     # how to setup foreign key - lesson 39
     name = models.CharField(null=False, blank=False, max_length=120)
-    image = models.FileField(upload_to='img/', blank=True, null=False, default='../static/item/img/default_item_image.png')
+    image = models.ImageField(upload_to='img/', blank=True, null=False, default='/static/item/img/default_item_image.png')
     description = models.TextField(null=False, blank=True)
 
     def __repr__(self):
