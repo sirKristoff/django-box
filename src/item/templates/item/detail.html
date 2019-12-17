@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block head_title %}
+{{ object.name }} - details
+{% endblock %}
+
+
+{% block content %}
+    {% include 'item/card.html' with item=object %}
+{% endblock %}

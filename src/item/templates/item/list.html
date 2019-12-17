@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block head_title %}
+Items - list
+{% endblock %}
+
+
+{% block content %}
+
+    <!-- <div class='card-group'> -->
+    {% for object in object_list %}
+        {% include 'item/card.html' with item=object inline=True %}
+    {% endfor %}
+    <!-- </div> -->
+
+{% endblock %}

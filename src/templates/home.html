@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block head_title %}
+home
+{% endblock %}
+
+
+{% block content %}
+<h1>{{ title }}</h1>
+
+<!-- {% if request.user.is_authenticated %}
+<h4>{{ request.user }}@{{ request.path }}</h4>
+{% endif %} -->
+
+<p>{{ content }}</p>
+
+{% for item in items %}
+    {% include 'item/card.html' with item=item inline=True %}
+{% endfor %}
+
+{% endblock %}
