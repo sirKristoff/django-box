@@ -6,22 +6,14 @@ from django.template.loader import get_template
 from .models import Item
 from .forms import ItemModelForm
 
-# def item_detail_page(request, item_id):
-#     # obj            = Item.objects.get(id=item_id)
-#     obj            = get_object_or_404(Item, id=item_id)
-#     context        = {"request": request, "object": obj, "title": "title", "content": "content"}
-#     template_name  = "item_detail.html"
-#     template_obj   = get_template(template_name)
-#     rendered_item  = template_obj.render(context)
-#     return HttpResponse(rendered_item)
-
 
 
 def item_list_view(request):
     # list out objects (could be search)
-    qs             = Item.objects.all()
+    query          = request.GET.get('q', None)
+    qs             = Item.objects.search(query=query)
     template_name  = "item/list.html"
-    context        = {'object_list': qs}
+    context        = {'object_list': qs, 'query': query}
     return render(request, template_name, context)
 
 

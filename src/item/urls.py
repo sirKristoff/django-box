@@ -27,7 +27,7 @@ from .views import (
 
 urlpatterns = [
     path('', item_list_view),
-    path('create', item_create_view),
+    path('create/', item_create_view),
     path('<int:item_id>/', item_detail_view),
     path('<int:item_id>/edit/', item_update_view),
     path('<int:item_id>/delete/', item_delete_view),

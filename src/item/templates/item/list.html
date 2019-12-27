@@ -6,7 +6,7 @@ Items - list
 
 
 {% block module_navbar %}
-    <!-- { % include 'item/searchbar.html' %} -->
+    {% include 'searchbar.html' with action='/item' placeholder='Item name' %}
 {% endblock %}
 
 
