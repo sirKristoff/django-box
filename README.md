@@ -13,6 +13,7 @@ Item organizing system for home storages.
 ### _Items_ functionality
 
 - [x] Named _Item category_ describe physical item instance and consists its picture.
+- [ ] _Item_ is searchable by content of its attributes (name, description).
 - [ ] _Item category_ consists lists of _Packages_ containing physical item with category.
 - [ ] _Item_ may be (un)assigned to _Package_ instance.
 - [ ] _Item_ may be moved from one _Package_ instance to another.
