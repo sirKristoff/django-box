@@ -3,6 +3,7 @@ from django.contrib.admin.views.decorators import staff_member_required
 from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404, redirect
 from django.template.loader import get_template
+from searches.models import SearchQuery
 from .models import Item
 from .forms import ItemModelForm
 
@@ -14,6 +15,7 @@ def item_list_view(request):
     qs             = Item.objects.search(query=query)
     template_name  = "item/list.html"
     context        = {'object_list': qs, 'query': query}
+    SearchQuery.add_query(request)
     return render(request, template_name, context)
 
 

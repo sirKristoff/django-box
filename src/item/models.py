@@ -12,7 +12,7 @@ class ItemQuerySet(models.QuerySet):
     def search(self, query):
         if query is None:
             return self.all()
-        lookup = (Q(name__iexact=query) | Q(description__icontains=query))
+        lookup = (Q(name__icontains=query) | Q(description__icontains=query))
         return self.filter(lookup)
 
 
