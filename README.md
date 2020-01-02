@@ -29,3 +29,13 @@ Item organizing system for home storages.
 - [ ] Included _Items_ may be added or removed from _Package_.
 - [ ] Included _Item_ may be moved from one _Package_ to another.
 - [ ] _Package_ has its QR code linking to _details_ page.
+
+
+## TODO
+
+**`card.html`**
+- [ ] Make inline item details as horizontal card with small image
+- [ ] For full item details use fancy buttons for _Edit_ and _Delete_
+
+**`searchbar.html`**
+- [ ] Change single `input` to `input-group`

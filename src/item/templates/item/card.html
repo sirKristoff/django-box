@@ -2,6 +2,9 @@
 
 {% if inline %}
 
+    <!-- TODO:
+    Make card horizontal with small image on left as on:
+    https://getbootstrap.com/docs/4.4/components/card/#horizontal -->
     <div class='card-body'>
         <h5 class='card-title'>
             {% if request.user.is_authenticated %}
@@ -30,6 +33,7 @@
             <div class='content-markdown'>{{ item.description }}</div>
         </p>
         {% if request.user.is_staff %}
+        <!-- TODO: use fancy buttons instead -->
         <a href='{{ item.get_edit_url }}' class="card-link">Edit</a>
         <a href='{{ item.get_delete_url }}' class="card-link">Delete</a>
         {% endif %}
