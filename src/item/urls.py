@@ -25,10 +25,12 @@ from .views import (
 )
 
 
+app_name = 'item'
+
 urlpatterns = [
-    path('', item_list_view),
-    path('create/', item_create_view),
-    path('<int:item_id>/', item_detail_view),
-    path('<int:item_id>/edit/', item_update_view),
-    path('<int:item_id>/delete/', item_delete_view),
+    path('', item_list_view, name='list'),
+    path('create/', item_create_view, name='create'),
+    path('<int:item_id>/', item_detail_view, name='detail'),
+    path('<int:item_id>/edit/', item_update_view, name='update'),
+    path('<int:item_id>/delete/', item_delete_view, name='delete'),
 ]

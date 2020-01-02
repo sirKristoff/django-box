@@ -29,7 +29,7 @@ def item_create_view(request):
         # obj.name = form.cleaned_data.get("name") + "!"
         obj.save()
         form = ItemModelForm()
-        return redirect(f"{obj.get_absolute_url()}")
+        return redirect(obj.get_absolute_url())
     template_name  = "item/create.html"
     context        = {'form': form, 'title': "New Item:"}
     return render(request, template_name, context)
@@ -51,7 +51,7 @@ def item_update_view(request, item_id):
     form = ItemModelForm(request.POST or None, request.FILES or None, instance=obj)
     if form.is_valid():
         form.save()
-        return redirect(f"{obj.get_absolute_url()}")
+        return redirect(obj.get_absolute_url())
     template_name  = "item/update.html"
     context        = {"object": obj, 'form': form, 'title': f"Update {obj.name}"}
     return render(request, template_name, context)
@@ -62,7 +62,7 @@ def item_delete_view(request, item_id):
     obj            = get_object_or_404(Item, id=item_id)
     if request.method == "POST": # delete object only if posting
         obj.delete()
-        return redirect("/item")
+        return redirect("item:list")
     template_name  = "item/delete.html"
     context        = {"object": obj, 'form': None}
     return render(request, template_name, context)

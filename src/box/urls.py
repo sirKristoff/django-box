@@ -23,7 +23,7 @@ urlpatterns = [
     path('', home_page),
     path('home/', home_page),
     path('admin/', admin.site.urls),
-    path('item/', include('item.urls')),
+    path('item/', include('item.urls', namespace='item')),
 ]
 
 if settings.DEBUG:
