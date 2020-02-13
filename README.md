@@ -18,6 +18,7 @@ Item organizing system for home storages.
 - [ ] _Item_ may be (un)assigned to _Package_ instance.
 - [ ] _Item_ may be moved from one _Package_ instance to another.
 - [ ] _Item_ has its QR code linking to _details_ page.
+- [ ] _Item_ has breadcrumb info about _Package_ is stored in and "_parent_" _Packages_ containing primary _Package_.
 
 
 ### _Packages_ functionality
@@ -29,6 +30,7 @@ Item organizing system for home storages.
 - [ ] Included _Items_ may be added or removed from _Package_.
 - [ ] Included _Item_ may be moved from one _Package_ to another.
 - [ ] _Package_ has its QR code linking to _details_ page.
+- [ ] _Package_ has breadcrumb info about _Package_ is stored in and "_parent_" _Packages_ containing primary _Package_.
 
 
 ## TODO
@@ -39,3 +41,9 @@ Item organizing system for home storages.
 
 **`searchbar.html`**
 - [ ] Change single `input` to `input-group`
+
+**`item/update.html`**
+- [ ] Refactor buttons (`Save`, `Save and continue`, `Back`) on _Update_ page
+
+**`test-data/`**
+- [ ] Clear history (`django_admin_log`) of operations on example data
