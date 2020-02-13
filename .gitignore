@@ -1,6 +1,8 @@
 static_cdn/media/
 static_cdn/static/
 
+# SublimeText
+box.sublime-workspace
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
